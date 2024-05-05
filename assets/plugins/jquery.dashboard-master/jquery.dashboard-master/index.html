@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dashboard example</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+
+        <!-- Google Font API -->
+        <link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <!-- Bootstrap -->
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome-->
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <!-- plugin styles -->
+        <link rel="stylesheet" href="jquery.dashboard.css">
+        <!-- app styles -->
+        <link rel="stylesheet" href="dashboard.css">
+    </head>
+    <body>
+
+        <div class="db-body">
+            <div class="db-menu">
+                <button class="btn btn-default db-menu-item db-load-dashboard"><i class="fa fa-bars fa-2x fa-fw"></i></button>
+                <button class="btn btn-default db-menu-item db-toggle-grid"><i class="fa fa-th fa-2x fa-fw"></i></button>
+                <button class="btn btn-default db-menu-item db-add-element"><i class="fa fa-plus fa-2x fa-fw"></i></button>
+                <button class="btn btn-default db-menu-item db-clear-elements"><i class="fa fa-trash-o fa-2x fa-fw"></i></button>
+            </div>
+            <div class="db-elements">
+                <div data-db-top="0" data-db-left="0" data-db-width="22" data-db-height="18"></div>
+                <div data-db-top="6" data-db-left="22" data-db-width="10" data-db-height="6" data-db-stretch="v"></div>
+            </div>
+        </div>
+
+        <!-- dependencies -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script> -->
+        <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone.js"></script> -->
+
+        <!-- Bootstrap -->
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+        <!-- plugin -->
+        <script src="jquery.mousewheel.js"></script>
+        <script src="jquery.event.drag.js"></script>
+        <script src="jquery.event.drop.js"></script>
+        <script src="jquery.dashboard.js"></script>
+        <!-- app -->
+        <script>
+            $(function onReady() {
+                var $db = $('.db-elements');
+
+                $db.delegate('div', 'block:created.dashboard block:changed.dashboard block:removed.dashboard', function log(event, jsoned) {
+                    console.log(event, jsoned);
+                });
+
+                $db.dashboard({grid: [32, 18], editor: false});
+
+                $('.db-menu').
+                    delegate('.db-toggle-grid', 'click', function toggleGrid(event) {
+                        $db.dashboard('toggleEditor');
+                    }).
+                    delegate('.db-clear-elements', 'click', function clearDashboard(event) {
+                        $db.dashboard('clear');
+                    });
+
+            });
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,56 @@
+.db-body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.db-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 65px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, .65);
+}
+.db-elements {
+    position: absolute;
+    left: 70px;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.db-menu-item {
+    color: #bbb;
+    background-color: transparent;
+    border-color: transparent;
+    width: 40px;
+    padding: 6px 2px;
+    margin-bottom: 10px;
+}
+.db-menu-item:hover, 
+.db-menu-item:focus {
+    border-color: transparent;
+    background-color: transparent;
+    color: #fff;
+}
+.db-elements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.db-widget {
+    background-color: #eee;
+    box-shadow: 0 0 2px #666;
+}
+.db-widget img {
+    width: 100%;
+    height: 100%;
+}

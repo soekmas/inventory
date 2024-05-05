@@ -1,0 +1,68 @@
+<?php echo form_open(base_url() . 'index.php?admin/manage_user/add/' , array('class' => 'form-horizontal group-border-dashed', 'enctype' => 'multipart/form-data'));?>
+
+<h4 class="text-center">New User information</h4>
+<hr>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Full Name</label>
+  <div class="col-sm-6">
+    <input type="text"  name="name" class="form-control" placeholder="Enter user full name" />
+  </div>
+  <!-- End col-6 --> 
+</div>
+<!-- end form -group -->
+
+<div class="form-group">
+  <label class="col-sm-3 control-label">Login Username</label>
+  <div class="col-sm-6">
+    <input type="text"  name="username"  class="form-control"  placeholder="Enter login username" required />
+  </div>
+  <!-- End col-6 --> 
+</div>
+<!-- end form -group -->
+<div class="form-group">
+  <label class="col-sm-3 control-label">Login Password</label>
+  <div class="col-sm-6">
+    <input type="password"  name="password"  class="form-control"  placeholder="Enter login password" />
+  </div>
+  <!-- End col-6 --> 
+</div>
+<!-- end form -group -->
+<div class="form-group">
+  <label class="col-sm-3 control-label">Email</label>
+  <div class="col-sm-6">
+    <input type="text"  name="email"  class="form-control"  placeholder="Enter email" />
+  </div>
+  <!-- End col-6 --> 
+</div>
+<!-- end form -group -->
+
+<div class="form-group">
+  <label class="col-sm-3 control-label">User Role</label>
+  <div class="col-sm-6 ">
+    <select  class="form-control"  name="role" required>
+      <
+      <option value="admin">Admin</option>
+      <option value="user">Regular User</option>
+    </select>
+  </div>
+  <!-- End col-6 --> 
+</div>
+<!-- end form -group -->
+
+
+
+<div class="form-group">
+  <div class="col-sm-offset-3 col-sm-9 m-t-15">
+    <button type="submit" class="btn btn-success waves-effect"> Save </button>
+    <button type="" class="btn btn-default m-l-5 waves-effect" data-dismiss="modal"> Close </button>
+  </div>
+  <!-- End col-6 --> 
+</div>
+<!-- end form -group -->
+</form>
+<script>
+        jQuery(document).ready(function() {
+          $('form').parsley();                            
+
+          });
+</script> 
